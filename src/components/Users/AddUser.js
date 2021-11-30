@@ -14,12 +14,14 @@ const AddUser = () => {
       return;
     }
 
-    const user = {
-      username: enteredUsername,
-      age: enteredAge
-    };
+    if (+enteredAge <= 0) {
+      return;
+    }
 
-    console.log(user);
+    console.log(enteredUsername, enteredAge);
+
+    setEnteredUsername('');
+    setEnteredAge('');
   };
 
   const usernameChangeHandler = (event) => {
